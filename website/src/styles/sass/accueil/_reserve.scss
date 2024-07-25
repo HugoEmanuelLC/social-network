@@ -1,0 +1,54 @@
+.reserve{
+    padding-top: 30px;
+    ul{
+        height: 100%;
+        gap: 20px;
+        width: 80%;
+        margin: 0 auto;
+        li{
+            // @include border($_color_1);
+            @include flex(row, center, center);
+            font-size: 1.5rem;
+            width: 100%;
+            border: solid 1px $_color_4;
+            // cursor: pointer;
+            a{
+                // @include border($_color_2);
+                background-color: $_color_4;
+                text-align: center ;
+                width: 100%;
+                padding: 6px 0;
+                color: $_color_1;
+            }
+            span{
+                height: 100%;
+                padding: 6px 30px;
+                i{
+                    font-size: 1.5rem;
+                    color: $_color_4;
+                }
+            }
+            &:hover a{
+                background-color: $_color_1;
+                color: $_color_4;
+            }   
+            &:hover span{
+                background-color: $_color_4;
+            }
+            &:hover span i{
+                color: $_color_1;
+            }
+        }
+    }
+    @include media-queries(sm){
+        ul{
+            @include flex(column, center, center);
+        }
+    }
+    @include media-queries(md){
+        ul{
+            // width: 60%;
+            @include flex(row, center, center);
+        }
+    }
+}

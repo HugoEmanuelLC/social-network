@@ -1,0 +1,43 @@
+header{
+    position: relative;
+    h1{
+        text-align: center;
+        @include flex(row, center, center);
+        gap: 10px;
+        font-weight: 400;
+        padding: 10px 0;
+        @include media-queries(md){
+            padding: 60px 0;
+            font-size: 3rem;
+        }
+
+        span{
+            opacity: 0.6;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            @include media-queries(sm){
+                font-size: 0.65rem;
+            }
+        }
+    }
+
+    .burger{
+        display: none;
+        overflow: hidden;
+        @include media-queries(sm){
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 100;
+            font-size: 1.5rem;
+        }
+        i{
+            cursor: pointer;
+            &:hover{
+                color: $_color_5;
+            }
+        }
+    }
+}

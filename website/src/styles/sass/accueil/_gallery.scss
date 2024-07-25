@@ -1,0 +1,36 @@
+.gallery{
+    position: relative;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include media-queries(md){
+        height: 70vh;
+    }
+    .gallery_item{
+        position: absolute;       
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        transition: 300ms;
+        @include media-queries(md){
+            background-attachment: fixed;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+    .gallery_item:nth-child(1){
+        background-image: url('../assets/facade.webp');
+    }
+    .gallery_item:nth-child(2){
+        background-image: url('../assets/tablesinterieur.webp');
+    }
+    .gallery_item:nth-child(3){
+        background-image: url('../assets/tablesexterieurs.webp');
+    }
+    .active{
+        z-index: 10;
+    }
+}

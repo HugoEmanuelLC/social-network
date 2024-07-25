@@ -1,0 +1,51 @@
+body{
+    background-color: $_color_1;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    // @include border($_color_2);
+    // padding: 0 20px;
+}
+
+// PUB
+.pub{
+    background-color: $_color_4;
+    overflow: hidden;
+    display: flex;
+    p{
+        // @include border($_color_2);
+        color: $_color_1;
+        text-align: center;
+        padding: 7px 0;
+        font-size: 0.9rem;
+        animation: pub 30s linear infinite;
+
+    }
+}
+@keyframes pub{
+    0%{
+        transform: translateX(+100vw);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.text{
+    // max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    p{
+        text-align: center;
+    }
+    strong{
+        font-weight: 400;
+    }
+    @include media-queries(md){
+        p{
+            font-size: 2.5rem;
+        }
+    }
+}

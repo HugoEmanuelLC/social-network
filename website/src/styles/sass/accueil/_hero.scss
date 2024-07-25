@@ -1,0 +1,49 @@
+.hero{
+    .hero_image{
+        background-image: url('../assets/momos.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .hero_infos{
+        h1{
+            text-align: center;
+        }
+    }
+    @include media-queries(sm){
+        .hero_image{
+            height: 400px;
+        }
+        .hero_infos{
+            padding: 30px 20px;
+        }
+    }
+    @include media-queries(md){
+        .container{
+            position: relative;
+            width: 90%;
+            height: 600px;
+            margin: 0 auto;
+        }
+        .hero_image{
+            background-attachment: fixed;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+        .hero_infos{
+            @include flex(column, center, center);
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            min-height: 100%;
+            min-width: 100%;
+
+            h1{
+                color: $_color_1;
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
+                font-size: 3.5rem;
+                text-wrap: wrap;
+            }
+        }
+    }
+}
