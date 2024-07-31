@@ -1,5 +1,6 @@
 body{
     background-color: $_color_1;
+    overflow: hidden;
 }
 
 .container{
@@ -7,6 +8,41 @@ body{
     margin: 0 auto;
     // @include border($_color_2);
     // padding: 0 20px;
+}
+
+main{
+    width: 100%;
+    // border: solid 1px $_color_2;
+    height: auto;
+    .container{
+        // border: solid 1px $_color_5;
+        position: relative;
+        // overflow-x: hidden;
+        display: flex;
+        section{
+            flex: 1;
+            padding: 20px;
+        }
+    }
+}
+
+.modal{
+    background-color: $_color_1;
+    box-shadow: 0 2px 4px gray;
+    position: absolute;
+        top: -40px;
+        // left: 20px;
+        // right: 10px;
+        // bottom: 20px;
+        z-index: 100;
+    padding: 10px;
+    border-radius: 20px;
+}
+.modal_off{
+    right: -50vw;
+}
+.modal_on{
+    right: 10px;
 }
 
 // PUB
@@ -47,5 +83,36 @@ body{
         p{
             font-size: 2.5rem;
         }
+    }
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+    color: $_color_5;
+    i{
+        animation: loading 3s linear infinite;
+        font-size: 5rem;
+    }
+}
+
+@keyframes loading{
+    0%{
+        opacity: 0;
+        transform: rotate(0);
+        color: $_color_5;
+    }
+    50%{
+        opacity: 1;
+        transform: rotate(360deg);
+        color: $_color_4;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(720deg);
+        color: $_color_5;
     }
 }

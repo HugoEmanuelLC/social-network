@@ -1,0 +1,99 @@
+/*
+.login
+    .loginWrapper
+        .loginLeft
+            .loginLogo
+            .loginDesc
+        .loginRight
+            .loginBox
+                .loginInput
+                .loginButton
+                .loginForgot
+                .loginRegisterButton
+*/
+
+.login{
+    @include flex(column, center, center);
+    height: 100vh;
+    .loginWrapper{
+        @include flex(column, center, center);
+        @include media-queries(md){
+            @include flex(row, center, center);
+        }
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        .loginLeft{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            .loginLogo{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+            .loginDesc{
+                margin-top: 20px;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+        }
+        .loginRight{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            .loginBox{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                max-width: 400px;
+                height: 400px;
+                border-radius: 10px;
+                .loginInput{
+                    width: 80%;
+                    margin-top: 20px;
+                    input{
+                        width: 100%;
+                        padding: 10px;
+                        border: none;
+                        border-bottom: 1px solid $_color_5;
+                        outline: none;
+                        font-size: 1rem;
+                    }
+                }
+                .loginButton{
+                    width: 80%;
+                    margin-top: 20px;
+                    button{
+                        width: 100%;
+                        padding: 10px;
+                        border: none;
+                        background-color: $_color_1;
+                        color: $_color_1;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        cursor: pointer;
+                        outline: none;
+                    }
+                }
+                .loginForgot{
+                    margin-top: 20px;
+                    a{
+                        color: $_color_1;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
